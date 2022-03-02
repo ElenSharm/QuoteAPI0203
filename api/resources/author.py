@@ -4,7 +4,7 @@ from api.models.author import AuthorModel
 
 class AuthorResource(Resource):
     def get(self, author_id=None):
-        if author_id is None:
+        if author_id is not None:
             authors = AuthorModel.query.all()
             authors_list = [author.to_dict() for author in authors]
             return authors_list, 200
