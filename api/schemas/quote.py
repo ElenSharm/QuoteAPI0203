@@ -2,6 +2,7 @@ from api import ma
 from api.models.quote import QuoteModel
 from api.schemas.author import AuthorSchema
 
+
 class QuoteSchema(ma.SQLAlchemySchema):
     class Meta:
         model = QuoteModel
@@ -10,5 +11,6 @@ class QuoteSchema(ma.SQLAlchemySchema):
     text = ma.auto_field()
     author = ma.Nested(AuthorSchema())
 
-quote_schema = QuoteSchema() #quote --> quote_dict
-quotes_schema = QuoteSchema(many=True) #[quote, quote] --> [{}]
+
+quote_schema = QuoteSchema() # quote --> quote_dict
+quotes_schema = QuoteSchema(many=True) # [quote, quote] --> []
